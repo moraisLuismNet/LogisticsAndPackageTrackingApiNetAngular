@@ -121,8 +121,8 @@ dotnet ef database update --project LogisticPackageTrackingApiNet.Infrastructure
 
 ### Frontend 
 
-<kbd><img src="LogisticsAndPackageTrackingAngular/img/01.png" width="30%" height="90%" alt="LogisticsAndPackageTrackingAngular_01"></kbd>  <kbd><img src="LogisticsAndPackageTrackingAngular/img/02.png" width="30%" height="90%" alt="LogisticsAndPackageTrackingAngular_02"></kbd>  <kbd><img src="LogisticsAndPackageTrackingAngular/img/03.png" width="30%" height="90%" alt="LogisticsAndPackageTrackingAngular_03"></kbd>
-<kbd><img src="LogisticsAndPackageTrackingAngular/img/04.png" width="30%" height="90%" alt="LogisticsAndPackageTrackingAngular_04"></kbd>  <kbd><img src="LogisticsAndPackageTrackingAngular/img/05.png" width="30%" height="90%" alt="LogisticsAndPackageTrackingAngular_05"></kbd>  <kbd><img src="LogisticsAndPackageTrackingAngular/img/06.png" width="30%" height="90%" alt="LogisticsAndPackageTrackingAngular_06"></kbd>
+<kbd><img src="LogisticsAndPackageTrackingAngular/img/01.png" width="80%" height="90%" alt="LogisticsAndPackageTrackingAngular_01"></kbd>  <kbd><img src="LogisticsAndPackageTrackingAngular/img/02.png" width="80%" height="90%" alt="LogisticsAndPackageTrackingAngular_02"></kbd>  <kbd><img src="LogisticsAndPackageTrackingAngular/img/03.png" width="80%" height="90%" alt="LogisticsAndPackageTrackingAngular_03"></kbd>
+<kbd><img src="LogisticsAndPackageTrackingAngular/img/04.png" width="80%" height="90%" alt="LogisticsAndPackageTrackingAngular_04"></kbd>  <kbd><img src="LogisticsAndPackageTrackingAngular/img/05.png" width="80%" height="90%" alt="LogisticsAndPackageTrackingAngular_05"></kbd>  <kbd><img src="LogisticsAndPackageTrackingAngular/img/06.png" width="80%" height="90%" alt="LogisticsAndPackageTrackingAngular_06"></kbd>
 
 ---
 
