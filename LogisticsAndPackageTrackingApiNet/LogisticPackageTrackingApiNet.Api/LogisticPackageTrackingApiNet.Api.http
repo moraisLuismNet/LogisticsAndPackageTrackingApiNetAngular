@@ -1,0 +1,78 @@
+@LogisticPackageTrackingApiNet.Api_HostAddress = http://localhost:5096
+@version = 1.0
+@token = REPLACE_WITH_YOUR_TOKEN_HERE
+
+### ==============================
+### AUTHENTICATION
+### ==============================
+
+### 1. Register a new user
+POST {{LogisticPackageTrackingApiNet.Api_HostAddress}}/api/v{{version}}/Auth/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "johndoe@example.com",
+  "password": "Password123!"
+}
+
+### 2. Login (Get JWT Token)
+# Copy the token from the response and paste it into the @token variable above
+POST {{LogisticPackageTrackingApiNet.Api_HostAddress}}/api/v{{version}}/Auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "johndoe@example.com",
+  "password": "Password123!"
+}
+
+### ==============================
+### SHIPMENTS
+### ==============================
+
+### 3. Create a new shipment
+POST {{LogisticPackageTrackingApiNet.Api_HostAddress}}/api/v{{version}}/Shipments
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+  "senderName": "Alice Smith",
+  "originAddress": "123 Sender St, NY 10001",
+  "receiverName": "Bob Johnson",
+  "destinationAddress": "456 Receiver Ave, CA 90001",
+  "weight": 10.5
+}
+
+### 4. Get shipment by tracking number
+# Replace the value of trackingNumber with the TrackingNumber received in the creation response
+@trackingNumber = TRK-XXXXXXXXXX
+GET {{LogisticPackageTrackingApiNet.Api_HostAddress}}/api/v{{version}}/Shipments/{{trackingNumber}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### ==============================
+### TRACKING
+### ==============================
+
+### 5. Add a tracking update
+# Replace the shipmentId with the actual numeric Id received in the creation response
+@shipmentId = 1
+POST {{LogisticPackageTrackingApiNet.Api_HostAddress}}/api/v{{version}}/Tracking/{{shipmentId}}/updates
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+  "description": "Package has left the origin facility"
+}
+
+
+### 6. Get tracking history
+GET {{LogisticPackageTrackingApiNet.Api_HostAddress}}/api/v{{version}}/Tracking/{{shipmentId}}/history
+Accept: application/json
+Authorization: Bearer {{token}}

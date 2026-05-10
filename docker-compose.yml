@@ -1,0 +1,57 @@
+services:
+  logisticsandpackagetrackingapi:
+    build:
+      context: ./LogisticsAndPackageTrackingApiNet
+      dockerfile: Dockerfile
+    ports:
+      - "5265:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__SqlServer=Server=sqlserver;Database=LogisticsAndPackageTrackingDb;User=sa;Password=YourStrongPassword123!;TrustServerCertificate=True;MultipleActiveResultSets=True
+      - RabbitMQ__Host=rabbitmq
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    networks:
+      - logisticsandpackagetrackingnet
+
+  logisticsandpackagetrackingangular:
+    build:
+      context: ./LogisticsAndPackageTrackingAngular
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - logisticsandpackagetrackingapi
+    networks:
+      - logisticsandpackagetrackingnet
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=YourStrongPassword123!
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - logisticsandpackagetrackingnet
+
+  rabbitmq:
+    image: rabbitmq:4-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - logisticsandpackagetrackingnet
+
+volumes:
+  sqlserver_data:
+
+networks:
+  logisticsandpackagetrackingnet:
+    driver: bridge

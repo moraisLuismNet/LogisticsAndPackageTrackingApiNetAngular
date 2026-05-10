@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# IDEs
+.vscode
+.idea
+
+# Node.js
+**/node_modules
+**/dist
+**/build
+**/npm-debug.log*
+**/.npm
+
+# Angular
+**/.angular
+
+# .NET
+**/bin
+**/obj
+**/.vs
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Docker specifics
+Dockerfile
+docker-compose*
+.dockerignore

@@ -1,0 +1,11 @@
+{
+  "name": "logistics-and-package-tracking-api-net-angular",
+  "version": "1.0.0",
+  "description": "Logistics And Package Tracking System with Angular frontend and .NET backend",
+  "scripts": {
+    "start": "docker-compose up -d && node -e \"setTimeout(() => {}, 10000)\" && start http://localhost:4200/",
+    "stop": "docker-compose down",
+    "logs": "docker-compose logs -f",
+    "rebuild": "docker-compose build && docker-compose up -d"
+  }
+}
