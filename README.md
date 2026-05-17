@@ -128,8 +128,8 @@ dotnet ef database update --project LogisticPackageTrackingApiNet.Infrastructure
 
 ## 🔗 Links
 
-- [Frontend Documentation](file:///e:/LogisticsAndPackageTrackingApiNetAngular/LogisticsAndPackageTrackingAngular/README.md)
-- [Backend Documentation](file:///e:/LogisticsAndPackageTrackingApiNetAngular/LogisticsAndPackageTrackingApiNet/README.md)
+- [Frontend Documentation](LogisticsAndPackageTrackingAngular/README.md)
+- [Backend Documentation](LogisticsAndPackageTrackingApiNet/README.md)
 - [DeepWiki Project Page](https://deepwiki.com/moraisLuismNet/LogisticsAndPackageTrackingApiNetAngular)
 
 ---
